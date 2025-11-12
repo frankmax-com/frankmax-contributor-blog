@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+    
+    {{ if .Params.meta.keywords }}
+    <meta name="keywords" content="{{ .Params.meta.keywords }}">
+    {{ end }}
+    
+    {{ if .Params.author.name }}
+    <meta name="author" content="{{ .Params.author.name }}">
+    {{ end }}
+    
+    <!-- Canonical URL -->
+    {{ if .Params.seo.canonical_url }}
+    <link rel="canonical" href="{{ .Params.seo.canonical_url }}">
+    {{ else }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ end }}
+    
+    <!-- Basic CSS (you can enhance this) -->
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            color: #333;
+        }
+        .header { border-bottom: 1px solid #eee; margin-bottom: 2rem; padding-bottom: 1rem; }
+        .blog-meta { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+        .blog-categories { margin: 1rem 0; }
+        .blog-tags { margin: 1rem 0; }
+        .category, .tag { 
+            display: inline-block; 
+            background: #f0f0f0; 
+            padding: 0.2rem 0.5rem; 
+            margin: 0.2rem; 
+            border-radius: 3px; 
+            font-size: 0.8rem;
+        }
+        .banner-image { width: 100%; height: auto; margin: 1rem 0; }
+        .author-bio { 
+            border-top: 1px solid #eee; 
+            margin-top: 2rem; 
+            padding-top: 1rem; 
+            background: #f9f9f9; 
+            padding: 1rem;
+        }
+        .navigation { margin: 2rem 0; }
+        .navigation a { margin-right: 1rem; color: #0066cc; text-decoration: none; }
+        .navigation a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="{{ .Site.BaseURL }}" style="color: #333; text-decoration: none;">{{ .Site.Title }}</a></h1>
+        <nav class="navigation">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+    </div>
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+</body>
+</html>

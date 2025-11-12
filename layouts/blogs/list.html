@@ -1,0 +1,71 @@
+{{ define "main" }}
+<h1>Blog Posts</h1>
+
+{{ if .Paginator.Pages }}
+<div class="blog-list">
+    {{ range .Paginator.Pages }}
+    <article style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+        <h2><a href="{{ .Permalink }}" style="color: #333; text-decoration: none;">{{ .Title }}</a></h2>
+        
+        <div class="blog-meta">
+            {{ if .Params.author.name }}
+            <span>By <strong>{{ .Params.author.name }}</strong></span> • 
+            {{ end }}
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ if .Params.reading_time }}
+            • <span>{{ .Params.reading_time }}</span>
+            {{ end }}
+            {{ if .Params.blog_no }}
+            • <span>Blog #{{ .Params.blog_no }}</span>
+            {{ end }}
+        </div>
+        
+        {{ if .Description }}
+        <p>{{ .Description }}</p>
+        {{ else }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+        
+        <!-- Categories -->
+        {{ if .Params.categories }}
+        <div class="blog-categories">
+            {{ range .Params.categories }}
+            <span class="category">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <!-- Tags -->
+        {{ if .Params.tags }}
+        <div class="blog-tags">
+            {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <p><a href="{{ .Permalink }}">Read more →</a></p>
+    </article>
+    {{ end }}
+</div>
+
+<!-- Pagination -->
+{{ if gt .Paginator.TotalPages 1 }}
+<nav style="text-align: center; margin: 2rem 0;">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" style="margin: 0 0.5rem;">← Previous</a>
+    {{ end }}
+    
+    <span>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+    
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" style="margin: 0 0.5rem;">Next →</a>
+    {{ end }}
+</nav>
+{{ end }}
+
+{{ else }}
+<p>No blog posts found. Check back soon for new content!</p>
+{{ end }}
+
+{{ end }}

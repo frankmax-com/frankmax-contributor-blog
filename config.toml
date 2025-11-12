@@ -1,0 +1,79 @@
+baseURL = "http://localhost:1313"
+languageCode = "en-us"
+title = "FrankMax Digital - Blog Contributions"
+
+# Content settings
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+enableGitInfo = false
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+# Permalinks
+[permalinks]
+  blogs = "/blogs/:slug/"
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  author = "authors"
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    codeFences = true
+
+# Image processing
+[imaging]
+  resampleFilter = "CatmullRom"
+  quality = 75
+  anchor = "smart"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blogs"
+    url = "/blogs/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+# Site parameters
+[params]
+  description = "Blog contribution platform for FrankMax Digital"
+  author = "FrankMax Digital Team"
+  email = "contributors@frankmaxdigital.com"
+  
+  # Social media
+  [params.social]
+    linkedin = "company/frankmaxdigital"
+    twitter = "frankmaxdigital"
+    github = "frankmaxdigital"
+  
+  # Blog settings
+  [params.blog]
+    show_reading_time = true
+    show_author_bio = true
+    show_related_posts = true
+    posts_per_page = 10
+    enable_comments = false
+    
+  # SEO settings
+  [params.seo]
+    enable_schema = true
+    default_image = "images/default-blog-banner.jpg"

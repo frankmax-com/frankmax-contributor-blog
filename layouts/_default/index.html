@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="homepage">
+    {{ .Content }}
+    
+    <div style="margin: 2rem 0; padding: 1.5rem; background: #f8f9fa; border-radius: 5px;">
+        <h2>Recent Blog Posts</h2>
+        {{ $posts := where site.RegularPages "Type" "blogs" }}
+        {{ $posts = $posts | first 5 }}
+        
+        {{ if $posts }}
+        <div class="recent-posts">
+            {{ range $posts }}
+            <article style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+                <h3><a href="{{ .Permalink }}" style="color: #0066cc; text-decoration: none;">{{ .Title }}</a></h3>
+                <div class="blog-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    {{ if .Params.author.name }}
+                    <span>By {{ .Params.author.name }}</span> • 
+                    {{ end }}
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    {{ if .Params.reading_time }}
+                    • {{ .Params.reading_time }}
+                    {{ end }}
+                </div>
+                
+                {{ if .Description }}
+                <p>{{ .Description }}</p>
+                {{ else }}
+                <p>{{ .Summary }}</p>
+                {{ end }}
+                
+                {{ if .Params.categories }}
+                <div class="categories">
+                    {{ range .Params.categories }}
+                    <span class="category">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+        
+        <p><a href="/blogs/" style="color: #0066cc; font-weight: bold;">View all blog posts →</a></p>
+        
+        {{ else }}
+        <p>No blog posts yet. <a href="CONTRIBUTING.md">Start contributing</a> to see content here!</p>
+        {{ end }}
+    </div>
+    
+    <div style="margin: 2rem 0; padding: 1.5rem; background: #e8f4f8; border-radius: 5px; border-left: 4px solid #0066cc;">
+        <h3 style="margin-top: 0; color: #0066cc;">Quick Start</h3>
+        <ol>
+            <li>Read our <a href="CONTRIBUTING.md">Contributing Guide</a></li>
+            <li>Run: <code style="background: #f5f5f5; padding: 0.2rem 0.4rem; border-radius: 3px;">hugo new blogs/your-post-title.md</code></li>
+            <li>Write your content following our guidelines</li>
+            <li>Test locally with: <code style="background: #f5f5f5; padding: 0.2rem 0.4rem; border-radius: 3px;">hugo server -D</code></li>
+            <li>Submit for review via pull request</li>
+        </ol>
+    </div>
+</div>
+{{ end }}
