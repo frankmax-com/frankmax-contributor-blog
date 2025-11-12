@@ -10,12 +10,11 @@ This is the contributor platform for the FrankMax Digital blog. Here, external c
 
 ## Quick Start Guide
 
-1. **Read our [Contributing Guide](CONTRIBUTING.md)** to understand our process and guidelines
-2. **Create a new blog post** using: `hugo new blogs/your-post-title.md`
-3. **Prepare your images** following our image guidelines (see detailed steps below)
-4. **Write your content** following our style guide
-5. **Test locally** with: `hugo server -D`
-6. **Submit for review** via pull request
+1.  **Create a new blog post** using: `hugo new blogs/your-post-title.md`
+2. **Prepare your images** following our image guidelines (see detailed steps below)
+3. **Write your content** following our style guide
+4. **Test locally** with: `hugo server -D`
+5. **Submit for review** via pull request
 
 ### 📸 Image Creation and Upload Steps
 
