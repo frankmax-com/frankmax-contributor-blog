@@ -140,21 +140,20 @@ Planned enhancements include:
 ## Contact Information
 
 ### General Inquiries
-- **Email**: contributors@frankmaxdigital.com
+- **Email**: info@frankmaxdigital.com
 - **Response Time**: Within 24 hours on business days
 
 ### Technical Support
 - **GitHub Issues**: For platform bugs and feature requests
 - **Documentation**: Comprehensive guides and FAQs
 
-### Editorial Team
-- **Content Questions**: editorial@frankmaxdigital.com
-- **Partnership Opportunities**: partnerships@frankmaxdigital.com
+
 
 ### Social Media
-- **LinkedIn**: [FrankMax Digital](https://linkedin.com/company/frankmaxdigital)
-- **Twitter**: [@FrankMaxDigital](https://twitter.com/frankmaxdigital)
-- **GitHub**: [FrankMaxDigital](https://github.com/frankmaxdigital)
+- **LinkedIn**: [FrankMax Digital Singapore](https://www.linkedin.com/company/frankmax-digital-singapore/)
+- **Facebook**: [FrankMax Digital Singapore](https://www.facebook.com/frankmax.digital.singapore/)
+- **Instagram**: [FrankMax Digital Singapore](https://www.instagram.com/frankmax.digital.singapore/)
+- **GitHub**: [FrankMax Digital](https://github.com/frankmax-com)
 
 ---
 

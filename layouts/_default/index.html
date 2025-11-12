@@ -2,6 +2,50 @@
 <div class="homepage">
     {{ .Content }}
     
+    <!-- Categories Section -->
+    <div style="margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 style="margin: 0; color: #333;">Explore by Category</h2>
+            <a href="/categories/" style="color: #667eea; text-decoration: none; font-weight: 600; font-size: 0.95rem;">View All Categories →</a>
+        </div>
+        
+        {{ $categories := site.Taxonomies.categories }}
+        {{ if $categories }}
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            {{ range first 6 $categories.ByCount }}
+            {{ $categoryName := .Name }}
+            {{ $categoryCount := .Count }}
+            {{ $categoryURL := printf "/categories/%s/" (.Name | urlize) }}
+            
+            <div class="category-preview-card" style="background: white; padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0; transition: all 0.3s ease; text-align: center;">
+                <div class="category-icon" style="width: 40px; height: 40px; margin: 0 auto 1rem auto; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white;">
+                    {{ if eq $categoryName "AI & Machine Learning" }}🤖
+                    {{ else if eq $categoryName "Cloud Computing" }}☁️
+                    {{ else if eq $categoryName "Enterprise IT" }}🏢
+                    {{ else if eq $categoryName "Web Development" }}💻
+                    {{ else if eq $categoryName "Mobile Development" }}📱
+                    {{ else if eq $categoryName "Cybersecurity" }}🔒
+                    {{ else if eq $categoryName "DevOps" }}⚙️
+                    {{ else if eq $categoryName "Data Analytics" }}📊
+                    {{ else if eq $categoryName "UI/UX Design" }}🎨
+                    {{ else if eq $categoryName "Digital Marketing" }}📈
+                    {{ else if eq $categoryName "Project Management" }}📋
+                    {{ else if eq $categoryName "Documentation" }}📚
+                    {{ else if eq $categoryName "Tutorial" }}🎓
+                    {{ else }}📖{{ end }}
+                </div>
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">
+                    <a href="{{ $categoryURL }}" style="color: #333; text-decoration: none;">{{ $categoryName }}</a>
+                </h3>
+                <p style="color: #666; margin: 0; font-size: 0.9rem;">{{ $categoryCount }} {{ if eq $categoryCount 1 }}post{{ else }}posts{{ end }}</p>
+            </div>
+            {{ end }}
+        </div>
+        {{ else }}
+        <p style="color: #666; text-align: center; margin: 2rem 0;">No categories available yet. Start creating blog posts to see categories here!</p>
+        {{ end }}
+    </div>
+    
     <div style="margin: 2rem 0; padding: 1.5rem; background: #f8f9fa; border-radius: 5px;">
         <h2>Recent Blog Posts</h2>
         {{ $posts := where site.RegularPages "Type" "blogs" }}
@@ -57,4 +101,22 @@
         </ol>
     </div>
 </div>
+
+<style>
+.category-preview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+.category-preview-card h3 a:hover {
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .category-preview-card {
+        margin-bottom: 1rem;
+    }
+}
+</style>
 {{ end }}

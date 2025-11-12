@@ -1,0 +1,155 @@
+{{ define "main" }}
+<div class="categories-index">
+    <div class="page-header" style="margin-bottom: 3rem; text-align: center;">
+        <h1 style="font-size: 3rem; margin: 0 0 1rem 0; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Blog Categories</h1>
+        <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+            Explore our blog posts organized by topics. Click on any category to see all related articles.
+        </p>
+    </div>
+
+    {{ if .Data.Terms }}
+    <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        {{ range .Data.Terms.ByCount }}
+        {{ $categoryName := .Name }}
+        {{ $categoryCount := .Count }}
+        {{ $categoryURL := .Page.Permalink }}
+        
+        <div class="category-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;">
+            <!-- Background decoration -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 50%; z-index: 0;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+                <!-- Category Icon (you can customize these based on category) -->
+                <div class="category-icon" style="width: 60px; height: 60px; margin: 0 auto 1.5rem auto; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                    {{ if eq $categoryName "AI & Machine Learning" }}🤖
+                    {{ else if eq $categoryName "Cloud Computing" }}☁️
+                    {{ else if eq $categoryName "Enterprise IT" }}🏢
+                    {{ else if eq $categoryName "Web Development" }}💻
+                    {{ else if eq $categoryName "Mobile Development" }}📱
+                    {{ else if eq $categoryName "Cybersecurity" }}🔒
+                    {{ else if eq $categoryName "DevOps" }}⚙️
+                    {{ else if eq $categoryName "Data Analytics" }}📊
+                    {{ else if eq $categoryName "UI/UX Design" }}🎨
+                    {{ else if eq $categoryName "Digital Marketing" }}📈
+                    {{ else if eq $categoryName "Project Management" }}📋
+                    {{ else if eq $categoryName "Documentation" }}📚
+                    {{ else if eq $categoryName "Tutorial" }}🎓
+                    {{ else }}📖{{ end }}
+                </div>
+                
+                <h3 style="margin: 0 0 1rem 0; font-size: 1.4rem; color: #333;">
+                    <a href="{{ $categoryURL }}" style="color: inherit; text-decoration: none;">{{ $categoryName }}</a>
+                </h3>
+                
+                <p style="color: #666; margin: 0 0 1.5rem 0; font-size: 1rem;">
+                    {{ $categoryCount }} {{ if eq $categoryCount 1 }}article{{ else }}articles{{ end }}
+                </p>
+                
+                <!-- Sample posts preview -->
+                {{ $categoryPosts := where site.RegularPages ".Params.categories" "intersect" (slice $categoryName) }}
+                {{ if $categoryPosts }}
+                <div class="recent-posts-preview" style="text-align: left; margin: 1rem 0;">
+                    <h4 style="font-size: 0.9rem; color: #888; margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 0.5px;">Recent Posts:</h4>
+                    {{ range first 2 $categoryPosts }}
+                    <div style="margin: 0.3rem 0; font-size: 0.85rem; color: #555; border-left: 2px solid #e0e0e0; padding-left: 0.5rem;">
+                        <a href="{{ .Permalink }}" style="color: #555; text-decoration: none; line-height: 1.3;">{{ .Title | truncate 40 }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <a href="{{ $categoryURL }}" class="category-link" style="display: inline-block; padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;">
+                    Explore {{ $categoryName }} →
+                </a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="stats-section" style="margin: 4rem 0; padding: 2rem; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 15px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div>
+                <div style="font-size: 2.5rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem;">{{ len .Data.Terms }}</div>
+                <div style="color: #666; font-weight: 500;">Categories</div>
+            </div>
+            <div>
+                <div style="font-size: 2.5rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem;">{{ len (where site.RegularPages "Type" "blogs") }}</div>
+                <div style="color: #666; font-weight: 500;">Total Posts</div>
+            </div>
+            <div>
+                <div style="font-size: 2.5rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem;">{{ len (where site.RegularPages ".Params.author.name" "!=" nil) }}</div>
+                <div style="color: #666; font-weight: 500;">Contributors</div>
+            </div>
+        </div>
+    </div>
+    
+    {{ else }}
+    <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 15px;">
+        <h3 style="color: #666; margin-bottom: 1rem;">No categories available yet</h3>
+        <p style="color: #888; margin-bottom: 2rem;">Start creating blog posts with categories to see them organized here.</p>
+        <a href="/blogs/" style="display: inline-block; padding: 0.8rem 2rem; background: #667eea; color: white; text-decoration: none; border-radius: 25px; font-weight: 600;">Browse All Posts</a>
+    </div>
+    {{ end }}
+    
+    <div class="navigation-links" style="margin: 3rem 0; text-align: center;">
+        <a href="/blogs/" style="display: inline-block; padding: 0.8rem 2rem; background: #667eea; color: white; text-decoration: none; border-radius: 25px; font-weight: 600; margin: 0 1rem;">All Blog Posts</a>
+        <a href="/" style="display: inline-block; padding: 0.8rem 2rem; border: 2px solid #667eea; color: #667eea; text-decoration: none; border-radius: 25px; font-weight: 600; margin: 0 1rem;">Back to Home</a>
+    </div>
+</div>
+
+<style>
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+.category-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.recent-posts-preview a:hover {
+    color: #667eea !important;
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .stats-section > div {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .navigation-links a {
+        display: block;
+        margin: 1rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Animation for category icons */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.category-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.category-card:hover .category-icon {
+    animation-duration: 1s;
+}
+</style>
+{{ end }}

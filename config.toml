@@ -57,7 +57,7 @@ paginatePath = "page"
 [params]
   description = "Blog contribution platform for FrankMax Digital"
   author = "FrankMax Digital Team"
-  email = "contributors@frankmaxdigital.com"
+  email = "info@frankmaxdigital.com"
   
   # Social media
   [params.social]

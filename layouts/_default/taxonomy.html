@@ -1,0 +1,136 @@
+{{ define "main" }}
+<div class="category-page">
+    <div class="category-header" style="margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center;">
+        <h1 style="margin: 0; font-size: 2.5rem;">{{ .Title }}</h1>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 1.1rem;">
+            {{ .Data.Pages.Len }} {{ if eq .Data.Pages.Len 1 }}post{{ else }}posts{{ end }} in this category
+        </p>
+    </div>
+
+    {{ if .Data.Pages }}
+    <div class="posts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        {{ range .Data.Pages }}
+        <article class="blog-card" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            {{ if .Params.banner.image }}
+            <div class="card-image" style="height: 200px; background-image: url('{{ .Params.banner.image }}'); background-size: cover; background-position: center; position: relative;">
+                <div style="position: absolute; top: 10px; right: 10px;">
+                    {{ if .Params.featured }}
+                    <span style="background: #ff6b35; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Featured</span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            
+            <div class="card-content" style="padding: 1.5rem;">
+                <div class="card-meta" style="margin-bottom: 1rem;">
+                    {{ if .Params.categories }}
+                    <div class="categories" style="margin-bottom: 0.5rem;">
+                        {{ range .Params.categories }}
+                        <a href="/categories/{{ . | urlize }}/" class="category-tag" style="display: inline-block; background: #e3f2fd; color: #1976d2; padding: 0.2rem 0.8rem; margin: 0.2rem 0.2rem 0.2rem 0; border-radius: 15px; font-size: 0.8rem; text-decoration: none; font-weight: 500;">{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    
+                    <div class="meta-info" style="color: #666; font-size: 0.9rem;">
+                        {{ if .Params.author.name }}
+                        <span>By {{ .Params.author.name }}</span> • 
+                        {{ end }}
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                        {{ if .Params.reading_time }}
+                        • {{ .Params.reading_time }}
+                        {{ end }}
+                    </div>
+                </div>
+                
+                <h2 style="margin: 0 0 1rem 0; font-size: 1.4rem; line-height: 1.3;">
+                    <a href="{{ .Permalink }}" style="color: #333; text-decoration: none;">{{ .Title }}</a>
+                </h2>
+                
+                <p style="color: #666; line-height: 1.6; margin: 0 0 1rem 0;">
+                    {{ if .Description }}
+                        {{ .Description }}
+                    {{ else }}
+                        {{ .Summary | truncate 120 }}
+                    {{ end }}
+                </p>
+                
+                {{ if .Params.tags }}
+                <div class="tags" style="margin: 1rem 0;">
+                    {{ range first 3 .Params.tags }}
+                    <span class="tag" style="display: inline-block; background: #f5f5f5; color: #555; padding: 0.2rem 0.6rem; margin: 0.2rem 0.2rem 0.2rem 0; border-radius: 12px; font-size: 0.75rem;">#{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div style="margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                    <a href="{{ .Permalink }}" style="color: #1976d2; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
+                        Read More →
+                    </a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    
+    <!-- Pagination if needed -->
+    {{ if .Paginator }}
+    {{ if gt .Paginator.TotalPages 1 }}
+    <nav class="pagination" style="margin: 3rem 0; text-align: center;">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" style="display: inline-block; padding: 0.5rem 1rem; margin: 0 0.5rem; background: #1976d2; color: white; text-decoration: none; border-radius: 5px;">← Previous</a>
+        {{ end }}
+        
+        <span style="margin: 0 1rem; color: #666;">
+            Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+        </span>
+        
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" style="display: inline-block; padding: 0.5rem 1rem; margin: 0 0.5rem; background: #1976d2; color: white; text-decoration: none; border-radius: 5px;">Next →</a>
+        {{ end }}
+    </nav>
+    {{ end }}
+    {{ end }}
+    
+    {{ else }}
+    <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 10px;">
+        <h3 style="color: #666; margin-bottom: 1rem;">No posts in this category yet</h3>
+        <p style="color: #888;">Check back later for new content, or <a href="/blogs/" style="color: #1976d2;">browse all posts</a>.</p>
+    </div>
+    {{ end }}
+    
+    <div style="margin: 3rem 0; text-align: center;">
+        <a href="/categories/" style="display: inline-block; padding: 0.8rem 2rem; background: #667eea; color: white; text-decoration: none; border-radius: 25px; font-weight: 600;">← Browse All Categories</a>
+    </div>
+</div>
+
+<style>
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.blog-card h2 a:hover {
+    color: #1976d2;
+}
+
+.category-tag:hover {
+    background: #1976d2;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .category-header {
+        padding: 1.5rem;
+    }
+    
+    .category-header h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+{{ end }}

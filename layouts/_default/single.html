@@ -1,0 +1,137 @@
+{{ define "main" }}
+<article class="single-page">
+    <header class="page-header" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0;">
+        <h1 style="margin: 0; color: #2c3e50; font-size: 2.5rem; font-weight: 600;">{{ .Title }}</h1>
+        
+        {{ if .Date }}
+        <div class="page-meta" style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        </div>
+        {{ end }}
+        
+        {{ if .Description }}
+        <p class="page-description" style="color: #666; font-size: 1.1rem; margin: 1rem 0 0 0; font-style: italic;">
+            {{ .Description }}
+        </p>
+        {{ end }}
+    </header>
+
+    <div class="page-content" style="line-height: 1.8; font-size: 1rem;">
+        {{ .Content }}
+    </div>
+
+    {{ if .Params.tags }}
+    <footer class="page-footer" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+        <div class="tags">
+            <strong style="color: #666; margin-right: 0.5rem;">Tags:</strong>
+            {{ range .Params.tags }}
+            <span class="tag" style="display: inline-block; background: #e3f2fd; color: #1976d2; padding: 0.2rem 0.8rem; margin: 0.2rem 0.2rem 0.2rem 0; border-radius: 15px; font-size: 0.8rem; font-weight: 500;">{{ . }}</span>
+            {{ end }}
+        </div>
+    </footer>
+    {{ end }}
+</article>
+
+<style>
+.page-content h2 {
+    margin: 2rem 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.page-content h3 {
+    margin: 1.5rem 0 0.8rem 0;
+    color: #34495e;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.page-content h4 {
+    margin: 1.2rem 0 0.6rem 0;
+    color: #34495e;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.page-content ul, .page-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.page-content li {
+    margin: 0.3rem 0;
+}
+
+.page-content code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e91e63;
+}
+
+.page-content pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border-left: 4px solid #667eea;
+    margin: 1rem 0;
+}
+
+.page-content pre code {
+    background: none;
+    padding: 0;
+    color: #2c3e50;
+}
+
+.page-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.page-content th,
+.page-content td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.page-content th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-content {
+        font-size: 0.95rem;
+    }
+    
+    .page-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .page-content h3 {
+        font-size: 1.3rem;
+    }
+}
+</style>
+{{ end }}

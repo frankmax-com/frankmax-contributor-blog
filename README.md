@@ -239,7 +239,7 @@ Always test your content locally before submission:
 ### Getting Help
 
 - **GitHub Issues**: Technical problems and bug reports
-- **Email**: contributors@frankmaxdigital.com
+- **Email**: info@frankmaxdigital.com
 - **Documentation**: Check CONTRIBUTING.md for detailed guidance
 
 ### Response Times
