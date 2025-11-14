@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning in Production: A Complete MLOps Guide"
+title: "Machine Learning in Production: A Complete MLOps Guide 2"
 date: 2024-01-18T09:15:00Z
 draft: false
 description: "Learn how to deploy, monitor, and maintain machine learning models in production environments. Complete guide covering MLOps best practices, tools, and workflows."
@@ -9,7 +9,7 @@ meta:
   author: "Dr. Alex Chen"
 categories: ["AI & Machine Learning", "DevOps"]
 banner: 
-  image: "images/articles/blogs/mlops-production-2.jpg"
+  image: "images/articles/blogs/mlops-production.jpg"
   alt_text: "MLOps workflow diagram showing model development to production pipeline"
 tags: ["mlops", "machine-learning", "production", "deployment", "monitoring", "ci-cd"]
 blog_no: "B003"
@@ -27,7 +27,7 @@ seo:
 featured: false
 reading_time: "15 min read"
 ---
-
+    
 ## Introduction to MLOps
 
 Machine Learning Operations (MLOps) is the practice of collaboration and communication between data scientists and operations professionals to help manage production ML lifecycle. It's the intersection of machine learning, DevOps, and data engineering.
