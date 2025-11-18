@@ -8,7 +8,7 @@ defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 enableGitInfo = false
 
- #[pagination]
+ [pagination]
 pagerSize = 10
 path = "page"
 
