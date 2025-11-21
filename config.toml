@@ -8,9 +8,10 @@ defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 enableGitInfo = false
 
-# Pagination
-paginate = 10
-paginatePath = "page"
+[pagination]
+  pagerSize = 10
+  path = "page"
+
 
 # Permalinks
 [permalinks]
