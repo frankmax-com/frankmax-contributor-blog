@@ -9,12 +9,12 @@ meta:
   author: "Digital Transformation Team"
 categories: ["AI", "Customer Experience"]
 banner: 
-  image: "images/articles/blogs/chatbot.png"
+  image: "images/articles/blogs/chatbots.png"
   alt_text: "Illustration showing a customizable AI chatbot interface with user interaction elements"
 tags: ["Chatbots", "AI", "Customer Experience", "Automation", "Personalization"]
 blog_no: "B015"
 author: 
-  name: "Digital Transformation Team"
+  name: "Yatiraj"
   bio: "Experts in AI implementation and customer experience optimization, helping businesses leverage cutting-edge technology for better user engagement."
   image: "images/authors/dt-team.jpg"
   social:
