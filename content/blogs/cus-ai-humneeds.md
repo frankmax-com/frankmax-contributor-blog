@@ -9,14 +9,13 @@ meta:
   author: "Kavinashri"
 categories: ["Technology", "Fintech", "Customer Experience"]
 banner:
-  image: "/images/Credit-Risk-img/cus-ai-for-hum-need.png"
+  image: "/images/Credit-Risk-img/cus-ai-img1.png"
   alt_text: "Personalised Indian chatbot speaking Hindi, Tamil, showing UPI payment option and understanding regional context"
 tags: ["chatbot", "custom-chatbot", "whatsapp-bot", "multilingual-bot", "voice-bot", "upi-integration", "personalisation", "india"]
 blog_no: "TECH032"
 author:
   name: "Kavinashri"
   bio: "AI & Conversational Commerce Writer | Helping Indian businesses build chatbots that feel like talking to a human friend, not a robot."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"
@@ -27,7 +26,6 @@ seo:
 featured: true
 reading_time: "10 min read"
 ---
-
 
 *In India, a good chatbot doesn't just answer — it speaks your language, knows your city, and pays via UPI in 5 seconds.*
 
@@ -56,7 +54,7 @@ Here's exactly how the smartest brands are doing it.
 
 Build separate flows for each — one bot, many personalities.
 
-![Indian User Personas for Chatbot](/images/Credit-Risk-img/cus-ai-for-hum-needs.png)
+![Indian User Personas for Chatbot](/images/Credit-Risk-img/cus-ai-img2.png)
 
 *One chatbot, 5 different personalities — this is 2025 standard*
 
