@@ -16,7 +16,6 @@ blog_no: "INV022"
 author:
   name: "Kavinashri"
   bio: "Personal Finance & Investment Writer | Helping Indians build wealth through smart portfolio strategies, mutual funds, and digital tools. Simplifying the path to financial freedom."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"

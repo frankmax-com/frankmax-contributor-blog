@@ -1,5 +1,5 @@
 ---
-title: "Implementing Multilingual RAG Chatbots via LangGraph in 2025: The Ultimate Guide for Global Customer Support & Cross-Border Sales"
+title: "How LangGraph Powers Global-Ready Multilingual RAG Chatbots for Customer Support & International Sales"
 date: 2025-12-04T14:00:00+05:30
 draft: false
 description: "How Indian enterprises & D2C brands are using LangGraph + Multilingual RAG + Indian LLMs to build chatbots that speak 15+ languages, pull real-time data, and close sales from Mumbai to Michigan — all in one flow."

@@ -16,7 +16,6 @@ blog_no: "FIN005"
 author:
   name: "Kavinashri"
   bio: "Credit Risk & Fintech Specialist | Helping Indians understand modern credit scoring, AI lending models, and financial inclusion. Passionate about making complex finance simple."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"

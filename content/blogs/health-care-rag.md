@@ -16,7 +16,6 @@ blog_no: "HCT001"
 author:
   name: "Kavinashri"
   bio: "Healthcare AI Specialist | Helping hospitals and diagnostic chains replace endless phone queues and missed appointments with always-on, zero-hallucination RAG + LangGraph clinical assistants."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"

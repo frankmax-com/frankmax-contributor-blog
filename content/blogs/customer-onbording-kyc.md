@@ -16,7 +16,6 @@ blog_no: "FIN021"
 author:
   name: "Kavinashri"
   bio: "Personal Finance & Digital Banking Writer | Helping Indians open bank accounts, demat, and mutual funds in minutes using the latest paperless KYC methods."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"
