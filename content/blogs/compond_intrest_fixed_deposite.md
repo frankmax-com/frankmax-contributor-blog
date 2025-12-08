@@ -16,7 +16,6 @@ blog_no: "INV008"
 author:
   name: "Kavinashri"
   bio: "Personal Finance Writer | Helping Indians grow their money through smart saving and investing habits. Love simplifying complex money topics with real examples."
-  image: "images/authors/kavinashri.jpg"
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"

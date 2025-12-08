@@ -2,21 +2,20 @@
 title: "Credit Risk Assessment and Scoring in India: From CIBIL to AI-Powered Models (2025)"
 date: 2025-11-15T19:43:00+05:30
 draft: false
-description: "A complete guide to how credit risk is assessed and scored in India in 2025 — covering traditional bureau scores, AI and alternative data models, regulatory changes, and the future of lending."
+description: "A complete guide to how credit risk is assessed and scored in India in 2025 — covering traditional bureau scores, AI & alternative data models, regulatory changes, and the future of lending."
 meta:
-  title: "Credit Risk Assessment and Scoring in India 2025 | CIBIL, AI Models and Fintech"
+  title: "Credit Risk Assessment & Scoring in India 2025 | CIBIL, AI Models & Fintech"
   keywords: "credit score, CIBIL, credit risk India, AI credit scoring, fintech lending, alternative data, financial inclusion, RBI guidelines"
-  author: "Kavinashri"
+author: "Kavinashri"
 categories: ["Personal Finance", "Fintech", "Banking"]
 banner:
-  image: "/images/Credit-Risk-img/Credit Risk.png"
+  image: /images/Credit-Risk-img/Credit Risk.png
   alt_text: "Futuristic digital dashboard displaying credit scores, AI risk heatmaps, UPI transactions, and real-time lending decisions in India"
 tags: ["credit-score", "cibil", "fintech", "ai-lending", "personal-loan", "financial-inclusion", "rbi", "india"]
 blog_no: "FIN005"
 author:
   name: "Kavinashri"
-  bio: "Credit Risk and Fintech Specialist helping Indians understand modern credit scoring, AI lending models, and financial inclusion. Passionate about making complex finance simple."
-  image: "images/authors/kavinashri.jpg"
+  bio: "Credit Risk & Fintech Specialist | Helping Indians understand modern credit scoring, AI lending models, and financial inclusion. Passionate about making complex finance simple."
   social:
     linkedin: "kavinashri"
     twitter: "KavinashriFin"
@@ -27,7 +26,7 @@ featured: true
 reading_time: "10 min read"
 ---
 
-![Credit Risk Assessment in India 2025 - Banner](/images/Credit-Risk-img/Credit Risk.png)
+![Credit Risk Assessment in India 2025 - Banner] /images/Credit-Risk-img/Credit Risk.png
 *Futuristic view of AI-powered credit scoring in India (2025)*
 
 ## Introduction
@@ -44,18 +43,18 @@ Credit risk is the probability that a borrower will default on loan repayments. 
 
 Key drivers of credit risk in the Indian context:
 
-- Income stability and employment type
+- Income stability & employment type
 - Existing debt burden (Debt-to-Income ratio)
 - Repayment track record (bureau + UPI behaviour)
-- Economic and sectoral factors (e.g., IT slowdown, agriculture stress)
+- Economic & sectoral factors (e.g., IT slowdown, agriculture stress)
 
 ## The Credit Risk Assessment Process in India (2025)
 
 1. **Consent-based Data Collection** via Account Aggregator (Sahamati)
 2. **Bureau Pull** (CIBIL, Experian, Equifax, CRIF High Mark)
-3. **Alternative and Real-time Data** (UPI, GST, ITR, bank statements)
+3. **Alternative & Real-time Data** (UPI, GST, ITR, bank statements)
 4. **AI/ML Scoring Engine**
-5. **Final Risk Rating and Pricing**
+5. **Final Risk Rating & Pricing**
 
 ## Credit Scoring Models: Traditional vs Modern
 
@@ -66,9 +65,9 @@ Key drivers of credit risk in the Indian context:
 | CIBIL | 300–900 | 35% repayment, 30% credit utilisation |
 | Experian | 300–900 | Similar + trended data |
 | Equifax | 1–999 | Heavy focus on enquiry pattern |
-| CRIF High Mark | 300–900 | Popular with NBFCs and micro-lenders |
+| CRIF High Mark | 300–900 | Popular with NBFCs & micro-lenders |
 
-### Next-Gen AI and Alternative Scoring (2025 Leaders)
+### Next-Gen AI & Alternative Scoring (2025 Leaders)
 
 - Perfios, Yodlee, CredAvenue, Nucleus Software
 - Fintechs: Cred, Slice, Paytm, Jupiter Money
@@ -88,7 +87,7 @@ Key drivers of credit risk in the Indian context:
 - Algorithmic bias (location, gender, informal income proxies)
 - Data privacy under DPDP Act
 - Over-indebtedness risk with multiple digital lenders
-- Climate and ESG risk integration into scoring
+- Climate & ESG risk integration into scoring
 
 ## The Future (2025–2030)
 
@@ -96,7 +95,7 @@ Key drivers of credit risk in the Indian context:
 - Blockchain-based immutable credit histories
 - Integration of ONDC transaction data
 - ESG-adjusted credit scores (e.g., green loans at lower rates)
-- Real-time dynamic scoring using IoT and smartphone sensors (with consent)
+- Real-time dynamic scoring using IoT & smartphone sensors (with consent)
 
 ## Conclusion
 
